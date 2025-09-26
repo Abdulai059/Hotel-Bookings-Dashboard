@@ -12,9 +12,14 @@ const Img = styled.img`
 function Logo() {
   return (
     <StyledLogo>
-      <Img src="/logo-light.png" alt="Logo" />
+      <Img src="./public/logo-light.png" alt="Logo" />
     </StyledLogo>
   );
 }
 
 export default Logo;
+
+
+git add .
+git commit -m "first commit"
+git push
