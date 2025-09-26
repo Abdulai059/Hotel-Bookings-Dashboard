@@ -20,6 +20,3 @@ function Logo() {
 export default Logo;
 
 
-git add .
-git commit -m "first commit"
-git push
