@@ -18,6 +18,13 @@ const sizes = {
     padding: 1.2rem 2.4rem;
     font-weight: 500;
   `,
+  largebtn: css`
+    font-size: 1.6rem;
+    padding: 1.2rem 2.4rem;
+    margin: 1.2rem 2.4rem;
+    font-weight: 500;
+    width: 100%;
+  `,
 };
 
 const variations = {
@@ -53,13 +60,15 @@ const Button = styled.button`
   border-radius: var(--border-radius-sm);
   box-shadow: var(--shadow-sm);
 
-  ${(props) => sizes[props.size]}
-  ${(props) => variations[props.variation]}
+  ${(props) => sizes[props.$size]}
+  ${(props) => variations[props.$variation]}
 `;
 
+
+// Default transient props
 Button.defaultProps = {
-  variation: "primary",
-  size: "medium",
+  $variation: "primary",
+  $size: "medium",
 };
 
 export default Button;
