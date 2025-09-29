@@ -10,7 +10,7 @@ import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import { useForm } from "react-hook-form";
-import FormRow from "../../ui/";
+
 
 const FormRow = styled.div`
   display: grid;
@@ -86,8 +86,10 @@ function CreateCabinForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      <FormRow label="Cabin name" error={errors?.name?.message}>
-        {/* <Label htmlFor="name">Cabin name</Label> */}
+      
+      
+      <FormRow>
+        <Label htmlFor="name">Cabin name</Label>
         <Input
           type="text"
           id="name"
@@ -95,7 +97,7 @@ function CreateCabinForm() {
             required: "This field is required",
           })}
         />
-        {/* {errors?.name?.message && <Error>{errors.name.message}</Error>} */}
+        {errors?.name?.message && <Error>{errors.name.message}</Error>}
       </FormRow>
 
       <FormRow>
