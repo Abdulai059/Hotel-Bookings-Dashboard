@@ -10,37 +10,43 @@ import Button from "../../ui/Button";
 import FileInput from "../../ui/FileInput";
 import Textarea from "../../ui/Textarea";
 import { useForm } from "react-hook-form";
+import FormRow2 from "../../ui/FormRow2";
 
-const FormRow = styled.div`
-  display: grid;
-  align-items: center;
-  grid-template-columns: 24rem 1fr 1.2fr;
-  gap: 2.4rem;
+// const FormRow2 = styled.div`
+//   display: grid;
+//   align-items: center;
+//   grid-template-columns: 24rem 1fr 1.2fr;
+//   gap: 2.4rem;
 
-  padding: 1.2rem 0;
+//   padding: 1.2rem 0;
 
-  &:first-child {
-    padding-top: 0;
-  }
+//   &:first-child {
+//     padding-top: 0;
+//   }
 
-  &:last-child {
-    padding-bottom: 0;
-  }
+//   &:last-child {
+//     padding-bottom: 0;
+//   }
 
-  &:not(:last-child) {
-    border-bottom: 1px solid var(--color-grey-100);
-  }
+//   &:not(:last-child) {
+//     border-bottom: 1px solid var(--color-grey-100);
+//   }
 
-  &:has(button) {
-    display: flex;
-    justify-content: flex-end;
-    gap: 1.2rem;
-  }
-`;
+//   &:has(button) {
+//     display: flex;
+//     justify-content: flex-end;
+//     gap: 1.2rem;
+//   }
+// `;
 
-const Label = styled.label`
-  font-weight: 500;
-`;
+// const Label = styled.label`
+//   font-weight: 500;
+// `;
+
+// const Error = styled.span`
+//   font-size: 1.4rem;
+//   color: var(--color-red-700);
+// `;
 
 function CreateCabinForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
@@ -80,7 +86,7 @@ function CreateCabinForm() {
 
   return (
     <Form onSubmit={handleSubmit(onSubmit, onError)}>
-      <FormRow label="Cabin name" error={errors?.name?.message}>
+      <FormRow2 label="Cabin name" error={errors?.name?.message}>
         {/* <Label htmlFor="name">Cabin name</Label> */}
         <Input
           type="text"
@@ -90,9 +96,10 @@ function CreateCabinForm() {
           })}
         />
         {/* {errors?.name?.message && <Error>{errors.name.message}</Error>} */}
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Maximum capacity" error={errors?.maxCapacity?.message}>
+      <FormRow2>
+        <Label htmlFor="maxCapacity">Maximum capacity</Label>
         <Input
           type="number"
           id="maxCapacity"
@@ -104,9 +111,10 @@ function CreateCabinForm() {
             },
           })}
         />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Regular price" error={errors?.regularPrice?.message}>
+      <FormRow2>
+        <Label htmlFor="regularPrice">Regular price</Label>
         <Input
           type="number"
           id="regularPrice"
@@ -118,9 +126,10 @@ function CreateCabinForm() {
             },
           })}
         />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Discount" error={errors?.discount?.message}>
+      <FormRow2>
+        <Label htmlFor="discount">Discount</Label>
         <Input
           type="number"
           id="discount"
@@ -132,12 +141,10 @@ function CreateCabinForm() {
               "Discount should be less than regular price",
           })}
         />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow
-        label="Description for website"
-        error={errors?.description?.message}
-      >
+      <FormRow2>
+        <Label htmlFor="description">Description for website</Label>
         <Textarea
           type="number"
           id="description"
@@ -146,13 +153,14 @@ function CreateCabinForm() {
             required: "This field is required",
           })}
         />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow label="Cabin photo">
+      <FormRow2>
+        <Label htmlFor="image">Cabin photo</Label>
         <FileInput id="image" accept="image/*" />
-      </FormRow>
+      </FormRow2>
 
-      <FormRow>
+      <FormRow2>
         {/* type is an HTML attribute! */}
         <Button $variation="secondary" $size="large" type="reset">
           Cancel
@@ -160,7 +168,7 @@ function CreateCabinForm() {
         <Button $variation="primary" $size="large" disabled={isCreating}>
           Add cabin
         </Button>
-      </FormRow>
+      </FormRow2>
     </Form>
   );
 }
