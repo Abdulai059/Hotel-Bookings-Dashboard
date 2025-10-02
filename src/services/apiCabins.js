@@ -11,7 +11,7 @@ export async function getCabins() {
   return data;
 }
 
-export async function createCabin(newCabin) {
+export async function createEditCabin(newCabin) {
   // Adding the image to supabase
   const imageName = `${Math.random()}-${newCabin.image.name}`.replaceAll(
     "/",
