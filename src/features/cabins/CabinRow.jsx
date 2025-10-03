@@ -4,6 +4,8 @@ import { formatCurrency } from "../../utils/helpers";
 import { useState } from "react";
 import CreateCabinForm from "./CreateCabinForm";
 import { useDeleteCabin } from "./useDeleteCabin";
+import { HiSquare2Stack } from "react-icons/hi2";
+
 
 const TableRow = styled.div`
   display: grid;
@@ -67,6 +69,9 @@ function CabinRow({ cabin }) {
         <Discount>{formatCurrency(discount)}</Discount>
 
         <div>
+          <button>
+            <HiSquare2Stack />
+          </button>
           <button onClick={() => setShowForm((show) => !show)}>Edit</button>
           <button onClick={() => deleteCabin(cabinId)} disabled={isDeleting}>
             Delete

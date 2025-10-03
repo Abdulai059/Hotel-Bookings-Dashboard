@@ -1,6 +1,8 @@
+/* eslint-disable no-unused-vars */
 import styled from "styled-components";
 import Logo from "./Logo";
 import MainNav from "./MainNav";
+
 
 const StyledSide = styled.aside`
   background-color: var(--color-grey-0);
@@ -14,6 +16,8 @@ const StyledSide = styled.aside`
 `;
 
 function Sidebar() {
+ 
+
   return (
     <StyledSide>
       <Logo />
