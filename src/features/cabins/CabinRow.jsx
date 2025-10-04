@@ -80,7 +80,7 @@ function CabinRow({ cabin }) {
         <div>Fit up to {maxCapacity} guests</div>
         <Price>{formatCurrency(regularPrice)}</Price>
         <Discount>{formatCurrency(discount)}</Discount>
-{/* 
+
         <div>
           <button disabled={isCreating} onClick={handleDuplicate}>
             <HiSquare2Stack />
@@ -98,4 +98,4 @@ function CabinRow({ cabin }) {
   );
 }
 
-export default CabinRow; */}
+export default CabinRow;
