@@ -38,9 +38,9 @@ export async function createEditCabin(newCabin) {
 
   // if (hasImagePath) return data;
 
-  // const { error: storageError } = await supabase.storage
-  //   .from("cabin-images")
-  //   .upload(imageName, newCabin.image);
+  const { error: storageError } = await supabase.storage
+    .from("cabin-images")
+    .upload(imageName, newCabin.image);
 
   // 3. Delete the cabin IF there was an error uploading image
   if (storageError) {
@@ -64,3 +64,6 @@ export async function deleteCabin(id) {
 
   return data;
 }
+git add .
+git commit -m "fix: correct the createEditCabin function to handle image upload properly"
+git push origin main
