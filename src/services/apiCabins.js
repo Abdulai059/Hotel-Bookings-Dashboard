@@ -64,3 +64,8 @@ export async function deleteCabin(id) {
 
   return data;
 }
+
+
+git add .
+git commit -m "fix: createEditCabin function to handle image upload"
+git push origin main
