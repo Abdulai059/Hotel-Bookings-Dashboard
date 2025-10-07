@@ -9,17 +9,16 @@ import Textarea from "../../ui/Textarea";
 import FormRow from "../../ui/FormRow";
 
 import { useForm } from "react-hook-form";
-import { createCabin } from "../../services/apiCabins";
+import { createEditCabin } from "../../services/apiCabins";
 
 function CreateCabinForm() {
   const { register, handleSubmit, reset, getValues, formState } = useForm();
-
   const { errors } = formState;
 
   const queryClient = useQueryClient();
 
   const { mutate, isLoading: isCreating } = useMutation({
-    mutationFn: createCabin,
+    mutationFn: (newCabin) => createEditCabin(newCabin),
     // success message
     onSuccess: () => {
       // toast
@@ -38,8 +37,8 @@ function CreateCabinForm() {
     onError: (err) => toast.error(err.message),
   });
 
+  // Form submit handler
   function onSubmit(data) {
-    // updating the cabins
     mutate({ ...data, image: data.image[0] });
   }
 
