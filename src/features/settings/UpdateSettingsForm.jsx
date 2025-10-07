@@ -3,15 +3,20 @@ import { useSettings } from "./useSettings";
 import Form from "../../ui/Form";
 import FormRow from "../../ui/FormRow";
 import Input from "../../ui/Input";
+import Spinner from "../../ui/Spinner";
 
 function UpdateSettingsForm() {
   const {
     isLoading,
-    settings: maxBookingLength,
-    maxGuestsPerBooking,
-    minBookingLength,
-    breakfastPrice,
+    settings: {
+      maxBookingLength,
+      maxGuestsPerBooking,
+      minBookingLength,
+      breakfastPrice,
+    } = {},
   } = useSettings();
+
+  if (isLoading) return <Spinner />;
 
   return (
     <Form>
