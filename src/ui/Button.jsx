@@ -21,7 +21,7 @@ const sizes = {
   largebtn: css`
     font-size: 1.6rem;
     padding: 1.2rem 2.4rem;
-    margin: 1.2rem 2.4rem;
+    margin: 1.2rem 0rem;
     font-weight: 500;
     width: 100%;
   `,
