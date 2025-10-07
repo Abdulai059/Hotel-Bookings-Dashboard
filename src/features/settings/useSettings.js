@@ -14,6 +14,3 @@ export function useSettings() {
   return { isLoading, error, settings };
 }
 
-git add .
-git commit -m "fix: import getSettings in useSettings.js"
-git push
