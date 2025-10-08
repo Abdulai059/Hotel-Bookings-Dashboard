@@ -76,6 +76,3 @@ function UpdateSettingsForm() {
 export default UpdateSettingsForm;
 
 
-git add .
-git commit -m "Fix: corrected isUpdating variable and blur update behavior in UpdateSettingsForm"
-git push origin main
