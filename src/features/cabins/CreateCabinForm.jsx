@@ -10,7 +10,7 @@ import FormRow from "../../ui/FormRow";
 import { useCreateCabin } from "./useCreateCabin";
 import { useEditCabin } from "./useEditCabin";
 
-function CreateCabinForm({ cabinToEdit = {} }) {
+function CreateCabinForm({ cabinToEdit = {}, onCloseModal }) {
   const { isCreating, createCabin } = useCreateCabin();
   const { isEditing, editCabin } = useEditCabin();
   const isWorking = isCreating || isEditing;
@@ -33,6 +33,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           // eslint-disable-next-line no-unused-vars
           onSuccess: (data) => {
             reset();
+            onCloseModal?.();
           },
         }
       );
@@ -43,6 +44,7 @@ function CreateCabinForm({ cabinToEdit = {} }) {
           // eslint-disable-next-line no-unused-vars
           onSuccess: (data) => {
             reset();
+            onCloseModal?.();
           },
         }
       );
@@ -54,7 +56,10 @@ function CreateCabinForm({ cabinToEdit = {} }) {
   }
 
   return (
-    <Form onSubmit={handleSubmit(onSubmit, onError)}>
+    <Form
+      onSubmit={handleSubmit(onSubmit, onError)}
+      type={onCloseModal ? "modal" : "regular"}
+    >
       <FormRow label="Cabin name" error={errors?.name?.message}>
         <Input
           type="text"
@@ -137,8 +142,13 @@ function CreateCabinForm({ cabinToEdit = {} }) {
       </FormRow>
 
       <FormRow>
-        {/* type is an HTML attribute! */}
-        <Button $variation="secondary" $size="large" type="reset">
+        {/* type is an HTM L attribute! */}
+        <Button
+          $variation="secondary"
+          $size="large"
+          type="reset"
+          onClick={() => onCloseModal?.()}
+        >
           Cancel
         </Button>
         <Button $variation="primary" $size="large" disabled={isWorking}>
