@@ -137,6 +137,3 @@ export default Menus;
 
 
 
-git add .
-git commit -m "Fix dropdown menu positioning and syntax in Menus component using getBoundingClientRect"
-git push
