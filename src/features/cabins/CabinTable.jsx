@@ -52,4 +52,6 @@ function CabinTable() {
   );
 }
 
-export default CabinTable;
+// export default CabinTable;
+
+
