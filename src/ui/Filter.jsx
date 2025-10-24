@@ -16,7 +16,7 @@ const FilterButton = styled.button`
   border: none;
 
   ${(props) =>
-    props.active &&
+    props.$active &&
     css`
       background-color: var(--color-brand-600);
       color: var(--color-brand-50);
@@ -25,7 +25,6 @@ const FilterButton = styled.button`
   border-radius: var(--border-radius-sm);
   font-weight: 500;
   font-size: 1.4rem;
-  /* To give the same height as select */
   padding: 0.44rem 0.8rem;
   transition: all 0.3s;
 
@@ -50,7 +49,8 @@ function Filter({ filterField, options }) {
         <FilterButton
           key={option.value}
           onClick={() => handelClick(option.value)}
-          active={currentFilter === option.value}
+          $active={currentFilter === option.value} 
+          disabled={currentFilter === option.value}
         >
           {option.label}
         </FilterButton>
@@ -60,7 +60,3 @@ function Filter({ filterField, options }) {
 }
 
 export default Filter;
-
-
-
-
