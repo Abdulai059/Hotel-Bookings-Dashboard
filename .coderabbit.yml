@@ -1,0 +1,5 @@
+reviews:
+  enable_auto_review: true
+  review_on_push: true
+  auto_review_branches:
+    - zesungdev
