@@ -103,6 +103,13 @@ const Footer = styled.footer`
 
 // A purely presentational component
 function BookingDataBox({ booking }) {
+  // Prevent destructuring errors when:
+  // - Booking data is still loading (undefined)
+  // - API response is missing guests or cabins properties
+  if (!booking || !booking.guests || !booking.cabins) {
+    return null;
+  }
+
   const {
     created_at,
     startDate,
