@@ -82,6 +82,7 @@ function CheckinBooking() {
 
       <BookingDataBox booking={booking} />
 
+
       {!hasBreakfast && (
         <Box>
           <Checkbox
