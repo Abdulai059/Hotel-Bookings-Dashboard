@@ -6,9 +6,10 @@ import Table from "../../ui/Table";
 
 import { formatCurrency } from "../../utils/helpers";
 import { formatDistanceFromNow } from "../../utils/helpers";
-import { HiArrowDownOnSquare, HiEye } from "react-icons/hi2";
+import { HiArrowDownOnSquare, HiArrowUpOnSquare, HiEye } from "react-icons/hi2";
 import Menus from "../../ui/Menus";
-import { Navigate, useNavigate } from "react-router-dom";
+import {useNavigate } from "react-router-dom";
+import { useCheckout } from "../check-in-out/useCheckout";
 
 const Cabin = styled.div`
   font-size: 1.6rem;
@@ -51,7 +52,9 @@ function BookingRow({
     cabins: { name: cabinName },
   },
 }) {
-  const Navigate = useNavigate();
+    const navigate = useNavigate();
+
+  const { checkout, isCheckingInOut } = useCheckout();
 
   const statusToTagName = {
     unconfirmed: "blue",
@@ -91,7 +94,7 @@ function BookingRow({
         <Menus.List id={bookingId}>
           <Menus.Button
             icon={<HiEye />}
-            onClick={() => Navigate(`/bookings/${bookingId}`)}
+            onClick={() => navigate(`/bookings/${bookingId}`)}
           >
             See details
           </Menus.Button>
@@ -99,9 +102,19 @@ function BookingRow({
           {status === "unconfirmed" && (
             <Menus.Button
               icon={<HiArrowDownOnSquare />}
-              onClick={() => Navigate(`/checkin/${bookingId}`)}
+              onClick={() => navigate(`/checkin/${bookingId}`)}
             >
               Check in
+            </Menus.Button>
+          )}
+
+          {status === "checked-in" && (
+            <Menus.Button
+              icon={<HiArrowUpOnSquare />}
+              onClick={() => checkout({ bookingId })}
+              disabled={isCheckingInOut}
+            >
+              Check out
             </Menus.Button>
           )}
         </Menus.List>
