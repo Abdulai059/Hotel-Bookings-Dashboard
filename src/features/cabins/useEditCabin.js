@@ -16,4 +16,3 @@ export function useEditCabin() {
 
   return { isEditing, editCabin };
 }
- 
