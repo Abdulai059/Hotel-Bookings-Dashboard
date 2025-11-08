@@ -10,6 +10,7 @@ function BookingTable() {
   const { bookings, isLoading, count } = useBookings();
 
   if (isLoading) return <Spinner />;
+
   if (!bookings || bookings.length === 0)
     return <Empty resourceName="bookings" />;
 
@@ -33,7 +34,7 @@ function BookingTable() {
         />
 
         <Table.Footer>
-          <Pagination count={count}/>
+          <Pagination count={count} />
         </Table.Footer>
       </Table>
     </Menus>
