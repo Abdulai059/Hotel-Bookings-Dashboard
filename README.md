@@ -1,36 +1,49 @@
-
-
 # Hotel Bookings Dashboard
 
-A lightweight React + Vite admin dashboard for managing cabins, guests and bookings. Built with React Router, React Query, Supabase and styled-components. Includes reusable UI primitives, sample-data upload utilities and common CRUD workflows for bookings and cabins.
+![Hotel Bookings Dashboard](public/wild‑aosis‑app.png)
 
-## Key features
-- Bookings, cabins and guest management (CRUD)
-- Check-in / check-out flows with notifications
-- Authentication flow with redirect after sign-in
-- Reusable UI components: Table, Modal, Form primitives, Selects
-- Sample data uploader for local development
+A modern, lightweight **React + Vite** admin dashboard for managing cabins, guests, and bookings.  
+Built with **React Router**, **React Query**, **Supabase**, and **styled-components**, it includes reusable UI primitives, sample data utilities, and standard CRUD workflows for bookings and cabins.  
 
-## Tech stack
-- React (Vite)
-- React Router
-- React Query (@tanstack/react-query)
-- Supabase (storage & database)
-- styled-components
-- react-hot-toast for notifications
+---
 
-## Quick start
+## Key Features
 
-Prerequisites
-- Node.js (16+ recommended)
-- npm or yarn
-- Supabase project (for production or full feature usage)
+- Full **CRUD** for bookings, cabins, and guests  
+- **Check-in / Check-out flows** with real-time notifications  
+- **Authentication flow** with redirect after sign-in  
+- Reusable UI components: Table, Modal, Form primitives, Selects, Sidebar  
+- **Sample data uploader** for local development  
+- Responsive layout and accessible UI  
 
-Install
+---
+
+## Tech Stack
+
+- **React (Vite)**  
+- **React Router**  
+- **React Query (@tanstack/react-query)**  
+- **Supabase** (Database & Storage)  
+- **styled-components**  
+- **react-hot-toast** for notifications  
+
+---
+
+## Quick Start
+
+### Prerequisites
+
+- Node.js 16+  
+- npm or yarn  
+- Supabase project (for production or full feature usage)  
+
+### Install Dependencies
+
 ```bash
 npm install
 # or
 yarn
+
 ```
 
 Run (development)
@@ -83,14 +96,16 @@ Important files:
 - Add unit tests and lint scripts as needed. (No tests included by default.)
 
 ## Contributing
-- Follow existing code patterns (functional components, hooks, React Query).
-- Open focused PRs and document behavior changes.
-- Add a .env.example to show required environment variables.
+- Follow existing code patterns (functional components, hooks, React Query)
+- Open focused pull requests and document behavior changes
+- Add a .env.example to show required environment variables
+- Keep UI consistent with existing styled-components patterns
+
 
 ## License
 Add a LICENSE file appropriate to your needs (e.g., MIT).
 
 If you want, I can add:
-- a .env.example
-- a CONTRIBUTING.md template
-- basic unit tests scaffolding
+- .env.example file for environment variable reference
+- CONTRIBUTING.md template for onboarding contributors
+- Basic unit tests scaffolding for React Query hooks and UI components
