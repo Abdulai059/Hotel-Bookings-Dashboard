@@ -1,6 +1,7 @@
 # Hotel Bookings Dashboard
 
-![Hotel Bookings Dashboard](public/wild‑aosis‑app.png)
+![Hotel Bookings Dashboard](/public
+/wild-aosis-app.png)
 
 A modern, lightweight **React + Vite** admin dashboard for managing cabins, guests, and bookings.  
 Built with **React Router**, **React Query**, **Supabase**, and **styled-components**, it includes reusable UI primitives, sample data utilities, and standard CRUD workflows for bookings and cabins.  
