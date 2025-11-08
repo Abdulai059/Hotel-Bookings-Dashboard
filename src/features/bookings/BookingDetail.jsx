@@ -7,6 +7,7 @@ import Tag from "../../ui/Tag";
 import ButtonGroup from "../../ui/ButtonGroup";
 import Button from "../../ui/Button";
 import ButtonText from "../../ui/ButtonText";
+import Empty from "../../ui/Empty";
 
 import { useMoveBack } from "../../hooks/useMoveBack";
 import { useBooking } from "./useBooking";
@@ -35,6 +36,7 @@ function BookingDetail() {
   const Navigate = useNavigate();
 
   if (isLoading) return <Spinner />;
+  if (!booking) return <Empty resourceName="booking" />;
 
   const { status, id: bookingId } = booking;
 
@@ -81,9 +83,10 @@ function BookingDetail() {
           <Modal.Window name="delete">
             <ConfirmDelete
               resourceName="booking"
-              onConfirm={() => deleteBooking(bookingId, {onSettled: ()=> Navigate(-1)})}
+              onConfirm={() =>
+                deleteBooking(bookingId, { onSettled: () => Navigate(-1) })
+              }
               disabled={isDeleting}
-
             />
           </Modal.Window>
         </Modal>
