@@ -107,4 +107,4 @@ Add a LICENSE file appropriate to your needs (e.g., MIT).
 If you want, I can add:
 - .env.example file for environment variable reference
 - CONTRIBUTING.md template for onboarding contributors
-- Basic unit tests scaffolding for React Query hooks and UI components
+- Basic unit tests scaffolding for React Query hooks and UI components.
