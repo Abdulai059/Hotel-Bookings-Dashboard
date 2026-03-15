@@ -14,7 +14,6 @@ Built with **React Router**, **React Query**, **Supabase**, and **styled-compone
 - Reusable UI components: Table, Modal, Form primitives, Selects, Sidebar  
 - **Sample data uploader** for local development  
 - Responsive layout and accessible UI  
----
 
 ## Tech Stack
 
@@ -24,7 +23,7 @@ Built with **React Router**, **React Query**, **Supabase**, and **styled-compone
 - **Supabase** (Database & Storage)  
 - **styled-components**  
 - **react-hot-toast** for notifications  
----
+
 
 ## Quick Start
 
